@@ -34,7 +34,7 @@ export default function LMSPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -42,7 +42,7 @@ export default function LMSPage() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-iga-text-dark mb-2">Learning Center</h1>
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent mb-2">Learning Center</h1>
           <p className="text-iga-text-gray">Explore programs and continue your learning journey</p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export default function LMSPage() {
             placeholder="Search programs..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
+            className="pl-10 backdrop-blur-sm bg-white/50 border-white/60 focus:border-cyan-400 focus:ring-cyan-400/20 rounded-xl"
           />
         </div>
       </motion.div>
@@ -70,7 +70,7 @@ export default function LMSPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-2xl font-bold text-iga-text-dark mb-6"
+            className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent mb-6"
           >
             Continue Where You Left Off
           </motion.h2>
@@ -94,7 +94,7 @@ export default function LMSPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-2xl font-bold text-iga-text-dark mb-6"
+          className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent mb-6"
         >
           Discover New Programs
         </motion.h2>

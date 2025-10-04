@@ -20,18 +20,18 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
-        'iga-primary': '#A855F7',
-        'iga-secondary': '#C026D3',
-        'iga-accent': '#EC4899',
-        'iga-teal': '#14B8A6',
-        'iga-blue': '#60A5FA',
-        'iga-purple': '#8B5CF6',
-        'iga-success': '#34D399',
-        'iga-warning': '#FBBF24',
-        'iga-surface': '#FAF5FF',
-        'iga-text-dark': '#1F2937',
-        'iga-text-gray': '#6B7280',
-        'iga-border': '#E9D5FF',
+        'iga-primary': '#67E8F9',
+        'iga-secondary': '#A5F3FC',
+        'iga-accent': '#FBCFE8',
+        'iga-teal': '#5EEAD4',
+        'iga-blue': '#BAE6FD',
+        'iga-purple': '#E9D5FF',
+        'iga-success': '#86EFAC',
+        'iga-warning': '#FED7AA',
+        'iga-surface': 'rgba(255, 255, 255, 0.1)',
+        'iga-text-dark': '#0F172A',
+        'iga-text-gray': '#64748B',
+        'iga-border': 'rgba(255, 255, 255, 0.2)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -90,10 +90,31 @@ const config: Config = {
             height: '0',
           },
         },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-10px)',
+          },
+        },
+        'glow': {
+          '0%, 100%': {
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '0.7',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite',
+      },
+      backdropBlur: {
+        'xs': '2px',
       },
     },
   },

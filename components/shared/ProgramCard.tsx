@@ -27,13 +27,13 @@ export function ProgramCard({ program, progress, enrolled, onEnroll }: ProgramCa
   };
 
   return (
-    <div className="bg-white rounded-xl border border-iga-border overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+    <div className="backdrop-blur-xl bg-white/30 rounded-2xl border border-white/40 overflow-hidden hover:bg-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
       <div className="aspect-video relative bg-gray-200">
         <Image
           src={program.thumbnail}
           alt={program.title}
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>
 
@@ -72,7 +72,7 @@ export function ProgramCard({ program, progress, enrolled, onEnroll }: ProgramCa
 
         {enrolled ? (
           <Link href={`/student/lms/${program.id}/${MOCK_LESSONS.find(l => l.programId === program.id)?.id || ''}`}>
-            <Button className="w-full bg-iga-primary hover:bg-iga-secondary text-white">
+            <Button className="w-full bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-500 hover:to-teal-500 text-white shadow-lg hover:shadow-xl transition-all duration-300">
               {progress === 100 ? 'Review' : 'Continue'}
             </Button>
           </Link>
@@ -80,7 +80,7 @@ export function ProgramCard({ program, progress, enrolled, onEnroll }: ProgramCa
           <Button
             onClick={onEnroll}
             variant="outline"
-            className="w-full border-iga-primary text-iga-primary hover:bg-iga-surface"
+            className="w-full backdrop-blur-sm bg-white/50 border-cyan-400 text-cyan-600 hover:bg-white/70"
           >
             Enroll Now
           </Button>

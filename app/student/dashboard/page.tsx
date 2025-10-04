@@ -41,14 +41,21 @@ export default function StudentDashboard() {
   const eventDates = MOCK_EVENTS.map(event => new Date(event.date));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-pink-50">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Luminous Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-200/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-200/20 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      </div>
+
+      <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <h1 className="text-3xl font-bold text-iga-text-dark mb-2">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent mb-2">
             Welcome back, {user.displayName}!
           </h1>
           <p className="text-iga-text-gray">Continue your learning journey</p>
@@ -60,7 +67,7 @@ export default function StudentDashboard() {
           animate="visible"
           className="grid lg:grid-cols-3 gap-6 mb-8"
         >
-          <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-sm border border-iga-border">
+          <motion.div variants={fadeInUp} className="backdrop-blur-xl bg-white/30 rounded-2xl p-6 shadow-lg border border-white/40 hover:bg-white/40 transition-all duration-300">
             <div className="flex items-center justify-between mb-2">
               <p className="text-sm font-medium text-iga-text-gray">Current Streak</p>
               <Flame className="h-5 w-5 text-orange-500" />
@@ -69,7 +76,7 @@ export default function StudentDashboard() {
             <p className="text-xs text-iga-text-gray mt-1">Longest: {user.streak.longest} days</p>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-sm border border-iga-border">
+          <motion.div variants={fadeInUp} className="backdrop-blur-xl bg-white/30 rounded-2xl p-6 shadow-lg border border-white/40 hover:bg-white/40 transition-all duration-300">
             <div className="flex items-center justify-between mb-2">
               <p className="text-sm font-medium text-iga-text-gray">Programs Completed</p>
               <Award className="h-5 w-5 text-iga-primary" />
@@ -78,7 +85,7 @@ export default function StudentDashboard() {
             <p className="text-xs text-iga-text-gray mt-1">{enrolledPrograms.length} in progress</p>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-sm border border-iga-border">
+          <motion.div variants={fadeInUp} className="backdrop-blur-xl bg-white/30 rounded-2xl p-6 shadow-lg border border-white/40 hover:bg-white/40 transition-all duration-300">
             <div className="flex items-center justify-between mb-2">
               <p className="text-sm font-medium text-iga-text-gray">Badges Earned</p>
               <TrendingUp className="h-5 w-5 text-iga-purple" />
@@ -111,7 +118,7 @@ export default function StudentDashboard() {
                     <motion.div
                       key={program.id}
                       whileHover={{ scale: 1.01 }}
-                      className="bg-white rounded-xl p-6 shadow-sm border border-iga-border hover:border-iga-primary transition-all"
+                      className="backdrop-blur-xl bg-white/30 rounded-2xl p-6 shadow-lg border border-white/40 hover:bg-white/40 hover:shadow-xl transition-all duration-300"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
@@ -292,6 +299,7 @@ export default function StudentDashboard() {
             </motion.div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
